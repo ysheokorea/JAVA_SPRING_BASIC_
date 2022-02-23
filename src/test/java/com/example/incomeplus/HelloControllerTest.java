@@ -12,6 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
@@ -24,5 +25,7 @@ public class HelloControllerTest {
         String hello = "hello";
         mvc.perform(get("/hello")).andExpect(status().isOk()).andExpect(content().string(hello));
     }
+
+    //    HelloResponseDto를 테스트하는 코드를 짜야 되는데, hamcrest.Matchers.is가 없음
 
 }
